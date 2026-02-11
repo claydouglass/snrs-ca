@@ -106,18 +106,23 @@
     .brand .section-head { color:#fff; }
     .brand .section-sub { color:rgba(255,255,255,.6); }
     .brand-bento { display:grid; grid-template-columns:2fr 1fr; gap:24px; margin-top:64px; }
-    .brand-main { background:linear-gradient(135deg,var(--gn),var(--mg)); border-radius:16px; padding:48px; display:flex; flex-direction:column; justify-content:flex-end; min-height:360px; position:relative; overflow:hidden; box-shadow:inset 0 0 80px rgba(201,168,76,.08); }
-    .brand-main h3 { font-size:clamp(2rem,4vw,3.5rem); font-weight:700; color:var(--gl); letter-spacing:-.02em; margin-bottom:12px; }
+    .brand-main { background:linear-gradient(135deg,var(--gn),var(--mg)); border-radius:16px; padding:48px; display:flex; flex-direction:column; justify-content:flex-end; min-height:360px; position:relative; overflow:hidden; box-shadow:inset 0 0 80px rgba(198,255,62,.06); }
+    .brand-main h3 { font-size:clamp(2rem,4vw,3.5rem); font-weight:700; color:#c6ff3e; letter-spacing:-.02em; margin-bottom:12px; }
+    .brand-main .terpz-logo-svg { width:280px; max-width:100%; height:auto; margin-bottom:24px; }
+    .brand-main .terpz-logo-svg path { fill:#c6ff3e; }
+    .brand-main .terpz-product-img { width:100%; max-width:320px; border-radius:12px; margin-bottom:24px; filter:drop-shadow(0 8px 32px rgba(0,0,0,.4)); }
+    .brand-side .terpz-colors { display:flex; gap:8px; margin-top:16px; }
+    .brand-side .color-dot { width:24px; height:24px; border-radius:50%; border:2px solid rgba(255,255,255,.15); }
     .brand-main p { color:rgba(255,255,255,.7); font-size:1rem; line-height:1.7; max-width:480px; margin-bottom:24px; }
     .arrow-link { display:inline-flex; align-items:center; gap:8px; color:var(--gl); font-weight:600; font-size:.9375rem; transition:all .3s var(--ease); }
     .arrow-link:hover { gap:12px; }
     .arrow-link::after { content:"92"; transition:transform .3s var(--ease); }
     .arrow-link:hover::after { transform:translateX(4px); }
     .brand-side { background:var(--gn); border-radius:16px; padding:40px; display:flex; flex-direction:column; justify-content:center; }
-    .brand-side h4 { color:var(--gl); font-size:1.125rem; font-weight:600; margin-bottom:16px; }
+    .brand-side h4 { color:#c6ff3e; font-size:1.125rem; font-weight:600; margin-bottom:16px; }
     .brand-side ul { list-style:none; display:flex; flex-direction:column; gap:12px; }
     .brand-side li { color:rgba(255,255,255,.7); font-size:.9375rem; display:flex; align-items:center; gap:10px; }
-    .brand-side li::before { content:""; width:6px; height:6px; background:var(--gold); border-radius:50%; flex-shrink:0; }
+    .brand-side li::before { content:""; width:6px; height:6px; background:#c6ff3e; border-radius:50%; flex-shrink:0; }
 
     /* ---- GLOBAL REACH ---- */
     .global { background:var(--sw); }
@@ -322,19 +327,33 @@
       <p class="section-sub reveal">Our flagship consumer brand, crafted for discerning markets worldwide.</p>
       <div class="brand-bento">
         <div class="brand-main rc" style="transition-delay:.1s">
-          <h3>Terpz</h3>
-          <p>A premium cannabis brand built on terpene-forward flower. Every strain in the Terpz lineup is selected for its distinctive aroma, flavor, and effect profile â delivering a sensory experience that sets the global standard.</p>
-          <a href="https://www.terpzcannabis.com" target="_blank" rel="noopener" class="arrow-link">Visit terpzcannabis.com</a>
+          <svg class="terpz-logo-svg" viewBox="0 0 638 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M38.3286 10.624H62.5206L64.52 96H36.33L38.3286 10.624ZM0.952637 0L50.4246 1L99.8966 0V21.376H0.952637V0Z" fill="#c6ff3e"/>
+            <path d="M224.261 39.04V56.96H154.757V39.04H224.261ZM171.141 48L164.741 87.68L154.629 76.288H228.357V96H140.549L147.973 48L140.549 0H227.717V19.712H154.629L164.741 8.32L171.141 48Z" fill="#c6ff3e"/>
+            <path d="M293.011 42.24H328.979C333.501 42.24 337.085 41.216 339.731 39.168C342.376 37.0347 343.699 34.0907 343.699 30.336C343.699 26.5813 342.376 23.68 339.731 21.632C337.085 19.4987 333.501 18.432 328.979 18.432H289.555L300.435 6.528L304 96H276.243V0H332.179C339.347 0 345.619 1.28 350.995 3.84C356.371 6.4 360.552 9.94134 363.539 14.464C366.525 18.9867 368.019 24.2773 368.019 30.336C368.019 36.3093 366.525 41.5573 363.539 46.08C360.552 50.6027 356.371 54.144 350.995 56.704C345.619 59.1787 339.347 60.416 332.179 60.416H293.011V42.24ZM308.499 51.072H335.763L375 96H343.059L308.499 51.072Z" fill="#c6ff3e"/>
+            <path d="M468.863 0C476.713 0 483.455 1.36533 489.087 4.096C494.804 6.74134 499.156 10.496 502.143 15.36C505.215 20.224 506.751 25.8987 506.751 32.384C506.751 38.8693 505.215 44.544 502.143 49.408C499.156 54.272 494.804 58.0693 489.087 60.8C483.455 63.4453 476.713 64.768 468.863 64.768H426.879V45.184H467.583C472.191 45.184 475.817 44.0747 478.463 41.856C481.108 39.552 482.431 36.3947 482.431 32.384C482.431 28.3733 481.108 25.2587 478.463 23.04C475.817 20.736 472.191 19.584 467.583 19.584H429.055L439.935 8.32L443 96H415.743V0H468.863Z" fill="#c6ff3e"/>
+            <path d="M545.272 96V78.336L610.168 13.44L627.32 19.072H545.784V0L591.224 1L636.664 0V17.536L574 84L557.048 76.8H637.048V96L591.16 95L545.272 96Z" fill="#c6ff3e"/>
+          </svg>
+          <img class="terpz-product-img" src="https://www.terpzcannabis.com/terpz-products.png" alt="Terpz Cannabis Products" loading="lazy">
+          <p>Terpene-forward flower for discerning markets. Every strain in the Terpz lineup is selected for its distinctive aroma, flavor, and effect profile â setting the global standard for craft cannabis.</p>
+          <a href="https://www.terpzcannabis.com" target="_blank" rel="noopener" class="arrow-link">Explore terpzcannabis.com</a>
         </div>
         <div class="brand-side rc" style="transition-delay:.25s">
-          <h4>Brand Pillars</h4>
+          <h4>Brand DNA</h4>
           <ul>
-            <li>Terpene-forward profiles</li>
-            <li>Indoor craft quality</li>
-            <li>Consistent potency</li>
-            <li>Premium packaging</li>
+            <li>Terpene-forward strain selection</li>
+            <li>Indoor craft cultivation</li>
+            <li>Consistent batch potency</li>
+            <li>Sommelier-grade profiles</li>
+            <li>Premium consumer packaging</li>
             <li>International distribution</li>
           </ul>
+          <div class="terpz-colors">
+            <div class="color-dot" style="background:#c6ff3e;" title="Terpz Lime"></div>
+            <div class="color-dot" style="background:#0b0b0c;" title="Terpz Black"></div>
+            <div class="color-dot" style="background:#e8e8e5;" title="Terpz Cream"></div>
+            <div class="color-dot" style="background:#1a1a1c;" title="Terpz Charcoal"></div>
+          </div>
         </div>
       </div>
     </div>
