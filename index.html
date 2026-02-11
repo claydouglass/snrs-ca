@@ -24,6 +24,22 @@
     img { max-width:100%; display:block; }
     a { color:inherit; text-decoration:none; }
 
+
+    /* ---- AGE GATE ---- */
+    .age-gate { position:fixed; inset:0; z-index:9999; background:var(--dk); display:flex; align-items:center; justify-content:center; transition:opacity .5s var(--ease); }
+    .age-gate.hidden { opacity:0; pointer-events:none; }
+    .age-gate-box { text-align:center; max-width:420px; padding:48px 32px; }
+    .age-gate-logo { font-size:2rem; font-weight:700; color:var(--sw); letter-spacing:-.03em; margin-bottom:8px; }
+    .age-gate-sub { font-size:.75rem; font-weight:500; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:40px; }
+    .age-gate-q { font-size:1.5rem; font-weight:600; color:#fff; margin-bottom:8px; }
+    .age-gate-p { font-size:.9375rem; color:rgba(255,255,255,.5); margin-bottom:36px; line-height:1.6; }
+    .age-gate-btns { display:flex; gap:16px; justify-content:center; }
+    .age-gate-yes { background:var(--gold); color:var(--dk); padding:14px 48px; border-radius:8px; font-size:1rem; font-weight:600; border:none; cursor:pointer; transition:all .3s var(--ease); }
+    .age-gate-yes:hover { background:var(--gl); transform:translateY(-2px); box-shadow:0 8px 24px rgba(201,168,76,.3); }
+    .age-gate-no { background:transparent; color:rgba(255,255,255,.6); padding:14px 48px; border-radius:8px; font-size:1rem; font-weight:500; border:1px solid rgba(255,255,255,.15); cursor:pointer; transition:all .3s var(--ease); }
+    .age-gate-no:hover { border-color:rgba(255,255,255,.3); color:#fff; }
+    .age-gate-deny { display:none; color:#ff6b6b; font-size:.9375rem; margin-top:24px; font-weight:500; }
+
     /* ---- NAV ---- */
     .nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:20px 40px; display:flex; align-items:center; justify-content:space-between; transition:all .4s var(--ease); }
     .nav.scrolled { background:rgba(254,253,251,.92); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); box-shadow:0 1px 0 rgba(10,31,20,.06); padding:14px 40px; }
@@ -204,6 +220,21 @@
   </style>
 </head>
 <body>
+  <!-- AGE GATE -->
+  <div class="age-gate" id="ageGate">
+    <div class="age-gate-box">
+      <div class="age-gate-logo">sunrise</div>
+      <div class="age-gate-sub">Premium Indoor Cannabis</div>
+      <div class="age-gate-q">Are you 19 years or older?</div>
+      <div class="age-gate-p">You must be of legal age in your jurisdiction to view this website.</div>
+      <div class="age-gate-btns">
+        <button class="age-gate-yes" id="ageYes">Yes, I am</button>
+        <button class="age-gate-no" id="ageNo">No</button>
+      </div>
+      <div class="age-gate-deny" id="ageDeny">Sorry, you must be 19+ to access this site.</div>
+    </div>
+  </div>
+
   <!-- NAV -->
   <nav class="nav" id="nav">
     <a href="#" class="nav-logo">sunrise</a>
@@ -507,6 +538,32 @@
       });
     }, { threshold: 0.5 });
     counters.forEach(c => counterObs.observe(c));
+
+    // Age gate
+    const ageGate = document.getElementById("ageGate");
+    const ageYes = document.getElementById("ageYes");
+    const ageNo = document.getElementById("ageNo");
+    const ageDeny = document.getElementById("ageDeny");
+
+    if (localStorage.getItem("ageVerified") === "true") {
+      ageGate.classList.add("hidden");
+      setTimeout(() => ageGate.style.display = "none", 500);
+    } else {
+      document.body.style.overflow = "hidden";
+    }
+
+    ageYes.addEventListener("click", () => {
+      localStorage.setItem("ageVerified", "true");
+      ageGate.classList.add("hidden");
+      document.body.style.overflow = "";
+      setTimeout(() => ageGate.style.display = "none", 500);
+    });
+
+    ageNo.addEventListener("click", () => {
+      ageDeny.style.display = "block";
+      ageYes.style.display = "none";
+      ageNo.style.display = "none";
+    });
   </script>
 </body>
 </html>
