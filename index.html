@@ -63,6 +63,17 @@
     .diamond{width:48px;height:48px;transform:rotate(45deg);border:1.5px solid #D4A843;display:flex;align-items:center;justify-content:center;margin:0 auto 28px}
     .card h3{font-size:1.2rem;color:#1A3A2A;margin-bottom:12px}
     .card p{font-size:.92rem;color:#777;line-height:1.7}
+    .brand{background:#fff;padding:110px 0}
+    .brand-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+    .brand-left h2{font-size:2.4rem;color:#1A3A2A;margin-bottom:20px}
+    .brand-left p{color:#555;font-size:1rem;line-height:1.85}
+    .brand-card{background:#FAF6F0;border:1px solid #E8E4DC;border-radius:4px;padding:48px 40px;text-align:center;transition:border-color .35s,box-shadow .35s,transform .35s}
+    .brand-card:hover{border-color:#D4A843;box-shadow:0 12px 40px rgba(212,168,67,.12);transform:translateY(-4px)}
+    .brand-card h3{font-size:1.8rem;color:#1A3A2A;margin-bottom:8px}
+    .brand-card .brand-tagline{font-size:.72rem;text-transform:uppercase;letter-spacing:3px;color:#D4A843;font-weight:600;margin-bottom:20px}
+    .brand-card p{font-size:.95rem;color:#777;line-height:1.7;margin-bottom:24px}
+    .brand-link{display:inline-block;font-size:.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#D4A843;border-bottom:1.5px solid rgba(212,168,67,.3);padding-bottom:2px;transition:border-color .3s}
+    .brand-link:hover{border-color:#D4A843}
     .global{background:linear-gradient(160deg,#0F1A14 0%,#1A3A2A 50%,#0F1A14 100%);padding:110px 0;color:#fff}
     .global-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
     .global-left h2{font-size:2.4rem;margin-bottom:20px}
@@ -87,7 +98,7 @@
     .footer-logo{font-family:"Playfair Display",serif;font-size:1.4rem;font-weight:700;margin-bottom:20px}
     .footer-divider{width:60px;height:1px;background:#D4A843;margin:0 auto 20px}
     .footer p{color:rgba(255,255,255,.35);font-size:.8rem;letter-spacing:1px}
-    @media(max-width:968px){.about-grid,.global-grid,.contact-grid{grid-template-columns:1fr;gap:48px}.cards{grid-template-columns:1fr;max-width:440px;margin:0 auto}.hero h1{font-size:2.6rem}.section-header h2,.about-left h2,.global-left h2,.contact-left h2{font-size:2rem}}
+    @media(max-width:968px){.about-grid,.global-grid,.contact-grid,.brand-grid{grid-template-columns:1fr;gap:48px}.cards{grid-template-columns:1fr;max-width:440px;margin:0 auto}.hero h1{font-size:2.6rem}.section-header h2,.about-left h2,.global-left h2,.contact-left h2{font-size:2rem}}
     @media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.hero h1{font-size:2.2rem}.hero p{font-size:1rem}.stat-boxes,.market-cards{grid-template-columns:1fr}.about,.product,.global,.contact{padding:80px 0}}
     @media(max-width:480px){.hero h1{font-size:1.85rem}.hero-label{font-size:.62rem;letter-spacing:3px;padding:6px 16px}.btn-outline{padding:12px 30px;font-size:.75rem}}
   </style>
@@ -99,6 +110,7 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#product">Product</a></li>
+        <li><a href="#brand">Our Brand</a></li>
         <li><a href="#global">Global Reach</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -110,6 +122,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="#about">About</a>
     <a href="#product">Product</a>
+    <a href="#brand">Our Brand</a>
     <a href="#global">Global Reach</a>
     <a href="#contact">Contact</a>
   </div>
@@ -158,6 +171,25 @@
           <div class="diamond"></div>
           <h3>Hand-Trimmed Finish</h3>
           <p>Every flower is hand-trimmed and carefully cured by experienced artisans, preserving trichome integrity and delivering uncompromising quality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="brand" id="brand">
+    <div class="container">
+      <div class="brand-grid">
+        <div class="brand-left fade-in">
+          <span class="section-label">Our Brand</span>
+          <h2>Producers of<br>Terpz Cannabis</h2>
+          <p>Sunrise Canada is the producer behind Terpz, a premium cannabis brand built on a foundation of terpene-forward genetics and craft indoor cultivation. Every Terpz product is grown, cured, and finished in our Ottawa facility to the same exacting standards that define everything we do.</p>
+        </div>
+        <div class="fade-in">
+          <div class="brand-card">
+            <h3>Terpz</h3>
+            <div class="brand-tagline">Premium Cannabis</div>
+            <p>Terpene-rich, hand-crafted indoor flower grown for flavour, potency, and an elevated experience. Produced exclusively by Sunrise Canada.</p>
+            <a href="https://www.terpzcannabis.com" target="_blank" rel="noopener" class="brand-link">Visit terpzcannabis.com</a>
+          </div>
         </div>
       </div>
     </div>
