@@ -4,257 +4,481 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sunrise Canada — Premium Indoor Cannabis for Global Export</title>
-  <meta name="description" content="Sunrise Canada is a premier indoor cannabis flower producer based in Ottawa, cultivating craft-quality flower for discerning global markets.">
+  <meta name="description" content="Sunrise Canada produces craft premium indoor cannabis flower for export markets worldwide. GMP-certified facility in Ottawa, Canada.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth;font-size:16px}
-    body{font-family:"Inter",sans-serif;color:#2a2a2a;line-height:1.7;overflow-x:hidden;background:#FAF6F0}
-    body.menu-open{overflow:hidden}
-    h1,h2,h3,h4{font-family:"Playfair Display",serif;font-weight:700;line-height:1.25}
-    a{text-decoration:none;color:inherit}ul{list-style:none}
-    .container{max-width:1140px;margin:0 auto;padding:0 24px}
-    .fade-in{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
-    .fade-in.visible{opacity:1;transform:translateY(0)}
-    .navbar{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:20px 0;transition:background .4s,padding .4s,box-shadow .4s}
-    .navbar.scrolled{background:rgba(26,58,42,.97);padding:14px 0;box-shadow:0 2px 20px rgba(0,0,0,.25)}
-    .navbar .container{display:flex;align-items:center;justify-content:space-between}
-    .nav-logo{font-family:"Playfair Display",serif;font-size:1.55rem;font-weight:700;letter-spacing:.5px}
-    .gold{color:#D4A843}.white{color:#fff}
-    .nav-links{display:flex;gap:36px}
-    .nav-links a{color:rgba(255,255,255,.85);font-size:.8rem;font-weight:500;text-transform:uppercase;letter-spacing:2px;transition:color .3s;position:relative}
-    .nav-links a::after{content:"";position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:#D4A843;transition:width .3s}
-    .nav-links a:hover{color:#D4A843}.nav-links a:hover::after{width:100%}
-    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:1001;padding:4px}
-    .hamburger span{display:block;width:26px;height:2px;background:#fff;transition:transform .35s,opacity .25s}
-    .hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-    .hamburger.active span:nth-child(2){opacity:0}
-    .hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-    .mobile-menu{position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(15,26,20,.98);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;pointer-events:none;transition:opacity .4s;z-index:999}
-    .mobile-menu.open{opacity:1;pointer-events:all}
-    .mobile-menu a{color:#fff;font-size:1.1rem;font-weight:500;text-transform:uppercase;letter-spacing:3px;transition:color .3s}
-    .mobile-menu a:hover{color:#D4A843}
-    .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(160deg,#0F1A14 0%,#1A3A2A 40%,#1A3A2A 60%,#0F1A14 100%);position:relative;overflow:hidden;padding:120px 24px 80px}
-    .hero::before{content:"";position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(212,168,67,.08) 0%,transparent 70%);pointer-events:none}
-    .hero-content{position:relative;z-index:2;max-width:780px}
-    .hero-label{display:inline-block;border:1px solid rgba(212,168,67,.5);padding:8px 24px;font-size:.7rem;letter-spacing:4px;text-transform:uppercase;color:#D4A843;margin-bottom:28px;font-weight:500}
-    .hero h1{font-size:3.6rem;color:#fff;margin-bottom:20px}
-    .hero p{color:rgba(255,255,255,.7);font-size:1.1rem;max-width:540px;margin:0 auto 40px;font-weight:300}
-    .btn-outline{display:inline-block;border:1.5px solid #D4A843;color:#D4A843;padding:14px 40px;font-size:.8rem;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;transition:background .35s,color .35s}
-    .btn-outline:hover{background:#D4A843;color:#0F1A14}
-    .about{background:#FAF6F0;padding:110px 0}
-    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-    .about-left h2{font-size:2.4rem;color:#1A3A2A;margin-bottom:20px}
-    .about-left p{color:#555;font-size:1rem;line-height:1.85}
-    .stat-boxes{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    .stat-box{background:#fff;border-left:3px solid #D4A843;padding:24px 20px;box-shadow:0 2px 12px rgba(0,0,0,.04);transition:transform .3s}
-    .stat-box:hover{transform:translateY(-3px)}
-    .stat-box h4{font-family:"Inter",sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:2px;color:#1A3A2A;font-weight:600;margin-bottom:6px}
-    .stat-box p{font-size:.85rem;color:#777;line-height:1.55}
-    .product{background:#fff;padding:110px 0}
-    .section-header{text-align:center;max-width:600px;margin:0 auto 60px}
-    .section-header h2{font-size:2.4rem;color:#1A3A2A;margin-bottom:14px}
-    .section-header p{color:#666;font-size:1rem}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
-    .card{background:#FAF6F0;padding:44px 32px;text-align:center;border:1px solid transparent;border-radius:2px;transition:border-color .35s,box-shadow .35s,transform .35s}
-    .card:hover{border-color:#D4A843;box-shadow:0 8px 30px rgba(212,168,67,.12);transform:translateY(-6px)}
-    .diamond{width:48px;height:48px;transform:rotate(45deg);border:1.5px solid #D4A843;display:flex;align-items:center;justify-content:center;margin:0 auto 28px}
-    .card h3{font-size:1.2rem;color:#1A3A2A;margin-bottom:12px}
-    .card p{font-size:.92rem;color:#777;line-height:1.7}
-    .brand{background:#fff;padding:110px 0}
-    .brand-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-    .brand-left h2{font-size:2.4rem;color:#1A3A2A;margin-bottom:20px}
-    .brand-left p{color:#555;font-size:1rem;line-height:1.85}
-    .brand-card{background:#FAF6F0;border:1px solid #E8E4DC;border-radius:4px;padding:48px 40px;text-align:center;transition:border-color .35s,box-shadow .35s,transform .35s}
-    .brand-card:hover{border-color:#D4A843;box-shadow:0 12px 40px rgba(212,168,67,.12);transform:translateY(-4px)}
-    .brand-card h3{font-size:1.8rem;color:#1A3A2A;margin-bottom:8px}
-    .brand-card .brand-tagline{font-size:.72rem;text-transform:uppercase;letter-spacing:3px;color:#D4A843;font-weight:600;margin-bottom:20px}
-    .brand-card p{font-size:.95rem;color:#777;line-height:1.7;margin-bottom:24px}
-    .brand-link{display:inline-block;font-size:.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#D4A843;border-bottom:1.5px solid rgba(212,168,67,.3);padding-bottom:2px;transition:border-color .3s}
-    .brand-link:hover{border-color:#D4A843}
-    .global{background:linear-gradient(160deg,#0F1A14 0%,#1A3A2A 50%,#0F1A14 100%);padding:110px 0;color:#fff}
-    .global-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-    .global-left h2{font-size:2.4rem;margin-bottom:20px}
-    .global-left p{color:rgba(255,255,255,.65);font-size:1rem;line-height:1.85}
-    .market-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .market-card{background:rgba(255,255,255,.05);border:1px solid rgba(212,168,67,.2);padding:28px 22px;transition:border-color .3s,background .3s}
-    .market-card:hover{border-color:#D4A843;background:rgba(255,255,255,.08)}
-    .market-card h4{font-family:"Inter",sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:2.5px;color:#D4A843;font-weight:600;margin-bottom:8px}
-    .market-card p{font-size:.88rem;color:rgba(255,255,255,.55);line-height:1.6}
-    .contact{background:#FAF6F0;padding:110px 0}
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-    .contact-left h2{font-size:2.4rem;color:#1A3A2A;margin-bottom:16px}
-    .contact-left p{color:#666;font-size:1rem;line-height:1.8}
-    .contact-items{display:flex;flex-direction:column;gap:28px;padding-top:8px}
-    .contact-item{display:flex;align-items:flex-start;gap:18px}
-    .contact-icon{flex-shrink:0;width:50px;height:50px;border-radius:50%;border:1.5px solid #D4A843;display:flex;align-items:center;justify-content:center}
-    .contact-icon svg{width:20px;height:20px;stroke:#D4A843;fill:none;stroke-width:1.8}
-    .contact-item h4{font-family:"Inter",sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:2px;color:#1A3A2A;font-weight:600;margin-bottom:4px}
-    .contact-item p{font-size:.95rem;color:#666}
-    .contact-item a{color:#666;transition:color .3s}.contact-item a:hover{color:#D4A843}
-    .footer{background:#0F1A14;padding:52px 0 40px;text-align:center}
-    .footer-logo{font-family:"Playfair Display",serif;font-size:1.4rem;font-weight:700;margin-bottom:20px}
-    .footer-divider{width:60px;height:1px;background:#D4A843;margin:0 auto 20px}
-    .footer p{color:rgba(255,255,255,.35);font-size:.8rem;letter-spacing:1px}
-    @media(max-width:968px){.about-grid,.global-grid,.contact-grid,.brand-grid{grid-template-columns:1fr;gap:48px}.cards{grid-template-columns:1fr;max-width:440px;margin:0 auto}.hero h1{font-size:2.6rem}.section-header h2,.about-left h2,.global-left h2,.contact-left h2{font-size:2rem}}
-    @media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.hero h1{font-size:2.2rem}.hero p{font-size:1rem}.stat-boxes,.market-cards{grid-template-columns:1fr}.about,.product,.global,.contact{padding:80px 0}}
-    @media(max-width:480px){.hero h1{font-size:1.85rem}.hero-label{font-size:.62rem;letter-spacing:3px;padding:6px 16px}.btn-outline{padding:12px 30px;font-size:.75rem}}
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    :root {
+      --dk:#0A1F14; --gn:#14331F; --mg:#1B4D2E; --gold:#C9A84C; --gl:#E2C97E;
+      --sl:#F7F5F0; --sw:#FEFDFB; --fd:#070F0B; --ts:#4A5D52;
+      --sr:0 1px 2px rgba(10,31,20,.04),0 4px 12px rgba(10,31,20,.03);
+      --sh:0 2px 4px rgba(10,31,20,.06),0 12px 32px rgba(10,31,20,.08);
+      --se:0 4px 8px rgba(10,31,20,.06),0 20px 48px rgba(10,31,20,.1);
+      --ease:cubic-bezier(.16,1,.3,1);
+    }
+    html { scroll-behavior:smooth; }
+    body { font-family:"Inter",system-ui,-apple-system,sans-serif; color:var(--dk); background:var(--sw); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+    img { max-width:100%; display:block; }
+    a { color:inherit; text-decoration:none; }
+
+    /* ---- NAV ---- */
+    .nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:20px 40px; display:flex; align-items:center; justify-content:space-between; transition:all .4s var(--ease); }
+    .nav.scrolled { background:rgba(254,253,251,.92); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); box-shadow:0 1px 0 rgba(10,31,20,.06); padding:14px 40px; }
+    .nav-logo { font-size:1.5rem; font-weight:700; letter-spacing:-.03em; color:var(--sw); transition:color .4s var(--ease); }
+    .nav.scrolled .nav-logo { color:var(--dk); }
+    .nav-links { display:flex; gap:32px; align-items:center; }
+    .nav-links a { font-size:.8125rem; font-weight:500; letter-spacing:.04em; text-transform:uppercase; color:rgba(255,255,255,.75); transition:color .3s; }
+    .nav.scrolled .nav-links a { color:var(--ts); }
+    .nav-links a:hover { color:var(--gold); }
+    .nav-cta { background:var(--gold); color:var(--dk); padding:10px 24px; border-radius:6px; font-size:.8125rem; font-weight:600; letter-spacing:.02em; transition:all .3s var(--ease); }
+    .nav-cta:hover { background:var(--gl); transform:translateY(-1px); box-shadow:0 4px 12px rgba(201,168,76,.3); }
+    .nav.scrolled .nav-cta { background:var(--dk); color:var(--sw); }
+    .nav.scrolled .nav-cta:hover { background:var(--mg); }
+
+    /* Mobile menu */
+    .menu-toggle { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; z-index:200; }
+    .menu-toggle span { width:24px; height:2px; background:var(--sw); transition:all .3s var(--ease); border-radius:2px; }
+    .nav.scrolled .menu-toggle span { background:var(--dk); }
+    .mobile-overlay { display:none; }
+
+    /* ---- HERO ---- */
+    .hero { min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:120px 24px 100px; position:relative; background:linear-gradient(135deg,var(--fd) 0%,var(--dk) 25%,var(--gn) 50%,var(--mg) 75%,var(--dk) 100%); background-size:400% 400%; animation:meshGradient 20s ease infinite; }
+    @keyframes meshGradient { 0%{background-position:0% 50%} 25%{background-position:50% 0%} 50%{background-position:100% 50%} 75%{background-position:50% 100%} 100%{background-position:0% 50%} }
+    .hero::after { content:""; position:absolute; bottom:-40px; left:-5%; right:-5%; height:120px; background:var(--sl); transform:skewY(-3deg); z-index:2; }
+    .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(201,168,76,.15); border:1px solid rgba(201,168,76,.25); color:var(--gl); padding:8px 20px; border-radius:100px; font-size:.75rem; font-weight:500; letter-spacing:.12em; text-transform:uppercase; margin-bottom:32px; backdrop-filter:blur(8px); }
+    .hero-badge::before { content:""; width:6px; height:6px; background:var(--gold); border-radius:50%; }
+    .hero h1 { font-size:clamp(2.75rem,7vw,5.5rem); font-weight:600; letter-spacing:-.03em; line-height:1.05; color:#fff; max-width:900px; margin-bottom:24px; text-shadow:0 2px 40px rgba(0,0,0,.3); }
+    .hero h1 em { font-style:normal; color:var(--gl); }
+    .hero p { font-size:clamp(1rem,1.5vw,1.25rem); color:rgba(255,255,255,.7); max-width:560px; line-height:1.7; margin-bottom:48px; font-weight:300; }
+    .hero-ctas { display:flex; gap:16px; flex-wrap:wrap; justify-content:center; position:relative; z-index:3; }
+    .btn-primary { background:var(--gold); color:var(--dk); padding:16px 36px; border-radius:8px; font-size:.9375rem; font-weight:600; letter-spacing:.01em; transition:all .3s var(--ease); border:none; cursor:pointer; }
+    .btn-primary:hover { background:var(--gl); transform:translateY(-2px); box-shadow:0 8px 24px rgba(201,168,76,.35); }
+    .btn-ghost { background:transparent; color:#fff; padding:16px 36px; border-radius:8px; font-size:.9375rem; font-weight:500; border:1px solid rgba(255,255,255,.25); transition:all .3s var(--ease); cursor:pointer; }
+    .btn-ghost:hover { background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.4); transform:translateY(-2px); }
+
+    /* ---- METRICS BAR ---- */
+    .metrics { position:relative; z-index:3; background:var(--sl); padding:64px 24px; border-bottom:1px solid rgba(10,31,20,.06); }
+    .metrics-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:32px; }
+    .metric { text-align:center; }
+    .metric-num { font-size:clamp(2rem,4vw,3rem); font-weight:700; letter-spacing:-.03em; color:var(--dk); line-height:1; margin-bottom:8px; }
+    .metric-num .gold { color:var(--gold); }
+    .metric-label { font-size:.75rem; font-weight:500; letter-spacing:.15em; text-transform:uppercase; color:var(--ts); }
+
+    /* ---- SECTIONS ---- */
+    .section { padding:clamp(80px,12vw,160px) 24px; }
+    .section-inner { max-width:1100px; margin:0 auto; }
+    .section-label { font-size:.75rem; font-weight:500; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:16px; }
+    .section-head { font-size:clamp(2rem,4vw,3.2rem); font-weight:600; letter-spacing:-.025em; line-height:1.15; margin-bottom:20px; color:var(--dk); }
+    .section-sub { font-size:1.0625rem; color:var(--ts); line-height:1.75; max-width:520px; font-weight:400; }
+
+    /* ---- ABOUT ---- */
+    .about { background:var(--sw); }
+    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start; margin-top:64px; }
+    .about-text .section-head em { font-style:normal; color:var(--mg); }
+    .about-cards { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .about-card { background:#fff; border-radius:12px; padding:32px; box-shadow:var(--sr); transition:all .4s var(--ease); border-top:3px solid var(--gold); }
+    .about-card:hover { box-shadow:var(--sh); transform:translateY(-4px); }
+    .about-card h4 { font-size:1rem; font-weight:600; margin-bottom:8px; margin-top:16px; }
+    .about-card p { font-size:.9rem; color:var(--ts); line-height:1.65; }
+    .about-card .icon { width:40px; height:40px; background:var(--sl); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.25rem; }
+
+    /* ---- PRODUCT ---- */
+    .product { background:var(--sl); }
+    .product-header { text-align:center; max-width:600px; margin:0 auto 64px; }
+    .product-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .product-card { background:#fff; border-radius:12px; padding:40px 32px; box-shadow:var(--sr); transition:all .4s var(--ease); position:relative; overflow:hidden; }
+    .product-card::before { content:""; position:absolute; top:0; left:0; right:0; height:4px; border-radius:12px 12px 0 0; }
+    .product-card:nth-child(1)::before { background:linear-gradient(90deg,var(--mg),var(--gold)); }
+    .product-card:nth-child(2)::before { background:linear-gradient(90deg,var(--gold),var(--gl)); }
+    .product-card:nth-child(3)::before { background:linear-gradient(90deg,var(--dk),var(--mg)); }
+    .product-card:hover { box-shadow:var(--sh); transform:translateY(-4px); }
+    .product-card .icon { width:48px; height:48px; background:var(--sl); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:24px; }
+    .product-card h3 { font-size:1.125rem; font-weight:600; margin-bottom:12px; }
+    .product-card p { font-size:.9375rem; color:var(--ts); line-height:1.7; }
+
+    /* ---- BRAND (Terpz) ---- */
+    .brand { background:var(--dk); position:relative; overflow:hidden; }
+    .brand::before { content:""; position:absolute; top:-40px; left:-5%; right:-5%; height:120px; background:var(--sl); transform:skewY(-3deg); z-index:1; }
+    .brand .section-inner { position:relative; z-index:2; }
+    .brand .section-label { color:var(--gl); }
+    .brand .section-head { color:#fff; }
+    .brand .section-sub { color:rgba(255,255,255,.6); }
+    .brand-bento { display:grid; grid-template-columns:2fr 1fr; gap:24px; margin-top:64px; }
+    .brand-main { background:linear-gradient(135deg,var(--gn),var(--mg)); border-radius:16px; padding:48px; display:flex; flex-direction:column; justify-content:flex-end; min-height:360px; position:relative; overflow:hidden; box-shadow:inset 0 0 80px rgba(201,168,76,.08); }
+    .brand-main h3 { font-size:clamp(2rem,4vw,3.5rem); font-weight:700; color:var(--gl); letter-spacing:-.02em; margin-bottom:12px; }
+    .brand-main p { color:rgba(255,255,255,.7); font-size:1rem; line-height:1.7; max-width:480px; margin-bottom:24px; }
+    .arrow-link { display:inline-flex; align-items:center; gap:8px; color:var(--gl); font-weight:600; font-size:.9375rem; transition:all .3s var(--ease); }
+    .arrow-link:hover { gap:12px; }
+    .arrow-link::after { content:"92"; transition:transform .3s var(--ease); }
+    .arrow-link:hover::after { transform:translateX(4px); }
+    .brand-side { background:var(--gn); border-radius:16px; padding:40px; display:flex; flex-direction:column; justify-content:center; }
+    .brand-side h4 { color:var(--gl); font-size:1.125rem; font-weight:600; margin-bottom:16px; }
+    .brand-side ul { list-style:none; display:flex; flex-direction:column; gap:12px; }
+    .brand-side li { color:rgba(255,255,255,.7); font-size:.9375rem; display:flex; align-items:center; gap:10px; }
+    .brand-side li::before { content:""; width:6px; height:6px; background:var(--gold); border-radius:50%; flex-shrink:0; }
+
+    /* ---- GLOBAL REACH ---- */
+    .global { background:var(--sw); }
+    .global-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start; margin-top:64px; }
+    .market-cards { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .market-card { background:var(--sl); border-radius:10px; padding:24px; border-left:3px solid var(--gold); transition:all .3s var(--ease); }
+    .market-card:hover { transform:translateX(4px); }
+    .market-card h4 { font-size:.9375rem; font-weight:600; margin-bottom:4px; }
+    .market-card p { font-size:.8125rem; color:var(--ts); line-height:1.6; }
+
+    /* ---- CONTACT ---- */
+    .contact { background:var(--sl); }
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start; margin-top:64px; }
+    .contact-items { display:flex; flex-direction:column; gap:20px; }
+    .contact-item { display:flex; align-items:flex-start; gap:16px; }
+    .contact-icon { width:44px; height:44px; background:#fff; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.125rem; box-shadow:var(--sr); flex-shrink:0; }
+    .contact-item h4 { font-size:.9375rem; font-weight:600; margin-bottom:2px; }
+    .contact-item p { font-size:.875rem; color:var(--ts); line-height:1.6; }
+    .contact-item a { color:var(--mg); font-weight:500; }
+    .contact-item a:hover { color:var(--gold); }
+
+    /* ---- FOOTER ---- */
+    .footer { background:var(--fd); padding:64px 24px 32px; }
+    .footer-inner { max-width:1100px; margin:0 auto; }
+    .footer-top { display:flex; justify-content:space-between; align-items:start; padding-bottom:40px; border-bottom:1px solid rgba(201,168,76,.12); margin-bottom:32px; }
+    .footer-logo { font-size:1.25rem; font-weight:700; color:var(--sw); letter-spacing:-.02em; }
+    .footer-links { display:flex; gap:32px; }
+    .footer-links a { font-size:.8125rem; color:rgba(255,255,255,.45); transition:color .3s; }
+    .footer-links a:hover { color:var(--gl); }
+    .footer-bottom { display:flex; justify-content:space-between; align-items:center; }
+    .footer-copy { font-size:.75rem; color:rgba(255,255,255,.3); }
+
+    /* ---- REVEAL ANIMATIONS ---- */
+    .reveal { opacity:0; transform:translateY(24px); transition:opacity .8s var(--ease),transform .8s var(--ease); }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .rc { opacity:0; transform:translateY(16px); transition:opacity .6s var(--ease),transform .6s var(--ease); }
+    .rc.visible { opacity:1; transform:translateY(0); }
+
+    /* ---- REDUCED MOTION ---- */
+    @media (prefers-reduced-motion:reduce) {
+      *, *::before, *::after { animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; }
+      .hero { animation:none; background-size:100% 100%; }
+      .reveal, .rc { opacity:1; transform:none; }
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width:768px) {
+      .nav-links { display:none; }
+      .menu-toggle { display:flex; }
+      .mobile-overlay { position:fixed; inset:0; background:rgba(10,31,20,.97); z-index:150; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:32px; opacity:0; pointer-events:none; transition:opacity .4s var(--ease); }
+      .mobile-overlay.open { opacity:1; pointer-events:all; }
+      .mobile-overlay a { font-size:1.25rem; color:var(--sw); font-weight:500; }
+      .mobile-overlay .nav-cta { margin-top:16px; }
+      .mobile-close { position:absolute; top:24px; right:24px; background:none; border:none; color:var(--sw); font-size:2rem; cursor:pointer; }
+      .about-grid, .global-grid, .contact-grid { grid-template-columns:1fr; gap:40px; }
+      .brand-bento { grid-template-columns:1fr; }
+      .metrics-inner { grid-template-columns:repeat(2,1fr); }
+      .product-grid { grid-template-columns:1fr; }
+      .hero h1 { font-size:clamp(2.25rem,8vw,3.5rem); }
+      .nav { padding:16px 20px; }
+      .nav.scrolled { padding:12px 20px; }
+      .footer-top { flex-direction:column; gap:24px; }
+      .footer-bottom { flex-direction:column; gap:12px; text-align:center; }
+    }
+    @media (max-width:480px) {
+      .metrics-inner { grid-template-columns:1fr 1fr; gap:24px; }
+      .about-cards { grid-template-columns:1fr; }
+      .market-cards { grid-template-columns:1fr; }
+      .hero-ctas { flex-direction:column; align-items:center; }
+      .btn-primary, .btn-ghost { width:100%; text-align:center; }
+    }
   </style>
 </head>
 <body>
-  <nav class="navbar" id="navbar">
-    <div class="container">
-      <a href="#" class="nav-logo"><span class="gold">Sunrise</span> <span class="white">Canada</span></a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#product">Product</a></li>
-        <li><a href="#brand">Our Brand</a></li>
-        <li><a href="#global">Global Reach</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </div>
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-logo">sunrise.</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#product">Product</a>
+      <a href="#brand">Brands</a>
+      <a href="#global">Global</a>
+      <a href="#contact" class="nav-cta">Contact</a>
     </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#about">About</a>
-    <a href="#product">Product</a>
-    <a href="#brand">Our Brand</a>
-    <a href="#global">Global Reach</a>
-    <a href="#contact">Contact</a>
+
+  <!-- MOBILE OVERLAY -->
+  <div class="mobile-overlay" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose" aria-label="Close">&times;</button>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#product" class="mobile-link">Product</a>
+    <a href="#brand" class="mobile-link">Brands</a>
+    <a href="#global" class="mobile-link">Global</a>
+    <a href="#contact" class="nav-cta mobile-link">Contact</a>
   </div>
-  <section class="hero" id="hero">
-    <div class="hero-content fade-in">
-      <div class="hero-label">Premium Indoor Cannabis</div>
-      <h1>Craft Flower,<br><span class="gold">Grown for the World</span></h1>
-      <p>Setting the global standard in indoor cannabis cultivation. Precision-grown in Ottawa, crafted for discerning markets worldwide.</p>
-      <a href="#about" class="btn-outline">Discover More</a>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">Premium Indoor Cannabis</div>
+    <h1>Craft flower for the <em>global</em> market</h1>
+    <p>Sunrise Canada produces world-class indoor cannabis from our GMP-certified facility in Ottawa. Engineered for purity, cultivated for excellence.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">Get in Touch</a>
+      <a href="#product" class="btn-ghost">Our Process</a>
     </div>
   </section>
-  <section class="about" id="about">
-    <div class="container">
+
+  <!-- METRICS -->
+  <section class="metrics">
+    <div class="metrics-inner">
+      <div class="metric reveal">
+        <div class="metric-num"><span class="gold">100%</span></div>
+        <div class="metric-label">Indoor Grown</div>
+      </div>
+      <div class="metric reveal">
+        <div class="metric-num">GMP</div>
+        <div class="metric-label">Certified Facility</div>
+      </div>
+      <div class="metric reveal">
+        <div class="metric-num"><span class="counter" data-target="4">0</span>+</div>
+        <div class="metric-label">Export Markets</div>
+      </div>
+      <div class="metric reveal">
+        <div class="metric-num">24/7</div>
+        <div class="metric-label">Climate Control</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="section-inner">
+      <div class="section-label">About Us</div>
       <div class="about-grid">
-        <div class="about-left fade-in">
-          <h2>Rooted in Craft,<br>Built for Scale</h2>
-          <p>Sunrise Canada is a premier indoor cannabis flower producer headquartered in Ottawa. We combine meticulous cultivation practices with scalable production infrastructure, delivering consistently exceptional flower to licensed partners and regulated markets around the globe. Every harvest reflects our commitment to quality, compliance, and the highest standards of craft cannabis production.</p>
+        <div class="about-text reveal">
+          <h2 class="section-head">Built from the ground up for <em>premium</em> cultivation</h2>
+          <p class="section-sub">Sunrise Canada operates a state-of-the-art indoor facility designed from day one for international export. Every variable is controlled â light, temperature, humidity, nutrients â to produce flower that meets the highest global standards.</p>
+          <a href="#contact" class="btn-primary" style="margin-top:40px;display:inline-block;">Learn More</a>
         </div>
-        <div class="stat-boxes fade-in">
-          <div class="stat-box"><h4>100% Indoor Grown</h4><p>Climate-controlled environments ensuring year-round consistency and purity.</p></div>
-          <div class="stat-box"><h4>Craft Small Batch</h4><p>Intentionally limited runs to maintain premium quality at every stage.</p></div>
-          <div class="stat-box"><h4>Global Export Ready</h4><p>Licensed and compliant for international shipment to regulated markets.</p></div>
-          <div class="stat-box"><h4>GMP Quality Standard</h4><p>Production aligned with Good Manufacturing Practice protocols.</p></div>
+        <div class="about-cards">
+          <div class="about-card rc" style="transition-delay:.1s">
+            <div class="icon">ð±</div>
+            <h4>Precision Growing</h4>
+            <p>Custom-engineered grow rooms with full environmental automation and real-time monitoring.</p>
+          </div>
+          <div class="about-card rc" style="transition-delay:.2s">
+            <div class="icon">ð¬</div>
+            <h4>Lab Tested</h4>
+            <p>Every batch undergoes rigorous third-party testing for potency, purity, and consistency.</p>
+          </div>
+          <div class="about-card rc" style="transition-delay:.3s">
+            <div class="icon">ð­</div>
+            <h4>GMP Certified</h4>
+            <p>Our facility meets Good Manufacturing Practice standards required for international markets.</p>
+          </div>
+          <div class="about-card rc" style="transition-delay:.4s">
+            <div class="icon">ð</div>
+            <h4>Export Ready</h4>
+            <p>Licensed and permitted for cannabis export to regulated markets worldwide.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
-  <section class="product" id="product">
-    <div class="container">
-      <div class="section-header fade-in">
-        <h2>Cultivation with Intention</h2>
-        <p>Every element of our process is engineered for excellence, from seed selection through to the final cure.</p>
+
+  <!-- PRODUCT -->
+  <section class="section product" id="product">
+    <div class="section-inner">
+      <div class="product-header reveal">
+        <div class="section-label">Our Process</div>
+        <h2 class="section-head">Excellence at every stage</h2>
+        <p class="section-sub" style="margin:0 auto;">From seed selection to final packaging, every step is optimized for producing the world's finest indoor cannabis.</p>
       </div>
-      <div class="cards">
-        <div class="card fade-in">
-          <div class="diamond"></div>
+      <div class="product-grid">
+        <div class="product-card rc" style="transition-delay:.1s">
+          <div class="icon">ð¡</div>
           <h3>Controlled Environment</h3>
-          <p>Precision-tuned climate systems regulate temperature, humidity, and airflow to create the ideal microenvironment for each cultivar throughout its lifecycle.</p>
+          <p>Purpose-built indoor rooms with LED lighting, HVAC precision, and automated fertigation deliver optimal conditions 365 days a year.</p>
         </div>
-        <div class="card fade-in">
-          <div class="diamond"></div>
-          <h3>Select Genetics</h3>
-          <p>We source and develop proprietary genetics chosen for exceptional terpene expression, potency profiles, and visual appeal for premium markets.</p>
+        <div class="product-card rc" style="transition-delay:.2s">
+          <div class="icon">ð§¬</div>
+          <h3>Premium Genetics</h3>
+          <p>Our cultivar library features high-performance strains selected for terpene profiles, potency, and international market demand.</p>
         </div>
-        <div class="card fade-in">
-          <div class="diamond"></div>
-          <h3>Hand-Trimmed Finish</h3>
-          <p>Every flower is hand-trimmed and carefully cured by experienced artisans, preserving trichome integrity and delivering uncompromising quality.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="brand" id="brand">
-    <div class="container">
-      <div class="brand-grid">
-        <div class="brand-left fade-in">
-          <span class="section-label">Our Brand</span>
-          <h2>Producers of<br>Terpz Cannabis</h2>
-          <p>Sunrise Canada is the producer behind Terpz, a premium cannabis brand built on a foundation of terpene-forward genetics and craft indoor cultivation. Every Terpz product is grown, cured, and finished in our Ottawa facility to the same exacting standards that define everything we do.</p>
-        </div>
-        <div class="fade-in">
-          <div class="brand-card">
-            <h3>Terpz</h3>
-            <div class="brand-tagline">Premium Cannabis</div>
-            <p>Terpene-rich, hand-crafted indoor flower grown for flavour, potency, and an elevated experience. Produced exclusively by Sunrise Canada.</p>
-            <a href="https://www.terpzcannabis.com" target="_blank" rel="noopener" class="brand-link">Visit terpzcannabis.com</a>
-          </div>
+        <div class="product-card rc" style="transition-delay:.3s">
+          <div class="icon">ð¦</div>
+          <h3>Export Packaging</h3>
+          <p>Pharma-grade packaging meets international import requirements. Nitrogen-sealed for freshness and full regulatory compliance.</p>
         </div>
       </div>
     </div>
   </section>
-  <section class="global" id="global">
-    <div class="container">
+
+  <!-- BRAND (Terpz) -->
+  <section class="section brand" id="brand">
+    <div class="section-inner">
+      <div class="section-label reveal">Our Brand</div>
+      <h2 class="section-head reveal">Terpz Cannabis</h2>
+      <p class="section-sub reveal">Our flagship consumer brand, crafted for discerning markets worldwide.</p>
+      <div class="brand-bento">
+        <div class="brand-main rc" style="transition-delay:.1s">
+          <h3>Terpz</h3>
+          <p>A premium cannabis brand built on terpene-forward flower. Every strain in the Terpz lineup is selected for its distinctive aroma, flavor, and effect profile â delivering a sensory experience that sets the global standard.</p>
+          <a href="https://www.terpzcannabis.com" target="_blank" rel="noopener" class="arrow-link">Visit terpzcannabis.com</a>
+        </div>
+        <div class="brand-side rc" style="transition-delay:.25s">
+          <h4>Brand Pillars</h4>
+          <ul>
+            <li>Terpene-forward profiles</li>
+            <li>Indoor craft quality</li>
+            <li>Consistent potency</li>
+            <li>Premium packaging</li>
+            <li>International distribution</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOBAL REACH -->
+  <section class="section global" id="global">
+    <div class="section-inner">
       <div class="global-grid">
-        <div class="global-left fade-in">
-          <h2>Built for the<br>Global Stage</h2>
-          <p>Sunrise Canada is purpose-built for international export. Our operations adhere to the most stringent regulatory frameworks, ensuring seamless compliance across jurisdictions. From EU-GMP alignment to country-specific import requirements, we maintain the documentation, testing, and quality assurance protocols that global partners demand.</p>
+        <div class="reveal">
+          <div class="section-label">Global Reach</div>
+          <h2 class="section-head">Canadian quality, worldwide delivery</h2>
+          <p class="section-sub">Sunrise Canada is licensed for international cannabis export. We work with distributors and importers in regulated markets across the globe, delivering consistent, premium product at scale.</p>
+          <a href="#contact" class="btn-primary" style="margin-top:40px;display:inline-block;">Partner With Us</a>
         </div>
-        <div class="market-cards fade-in">
-          <div class="market-card"><h4>Europe</h4><p>EU-GMP aligned production for Germany, the UK, and emerging European medical markets.</p></div>
-          <div class="market-card"><h4>Asia-Pacific</h4><p>Positioned for licensed medical cannabis markets across Australia, New Zealand, and Southeast Asia.</p></div>
-          <div class="market-card"><h4>Americas</h4><p>Cross-border supply partnerships throughout Latin America and the Caribbean.</p></div>
-          <div class="market-card"><h4>Middle East</h4><p>Early-stage engagement with evolving medical cannabis frameworks in Israel and the broader region.</p></div>
+        <div class="market-cards">
+          <div class="market-card rc" style="transition-delay:.1s">
+            <h4>Europe</h4>
+            <p>Germany, UK, and expanding EU markets with full EU-GMP compliance pathways.</p>
+          </div>
+          <div class="market-card rc" style="transition-delay:.2s">
+            <h4>Asia-Pacific</h4>
+            <p>Australia, Thailand, and emerging regulated markets across the region.</p>
+          </div>
+          <div class="market-card rc" style="transition-delay:.3s">
+            <h4>Americas</h4>
+            <p>Domestic Canadian market plus Latin American export opportunities.</p>
+          </div>
+          <div class="market-card rc" style="transition-delay:.4s">
+            <h4>Middle East</h4>
+            <p>Israel and developing medical cannabis markets in the region.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
-  <section class="contact" id="contact">
-    <div class="container">
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="section-inner">
       <div class="contact-grid">
-        <div class="contact-left fade-in">
-          <h2>Let’s Talk</h2>
-          <p>Whether you represent a licensed distributor, a government health authority, or an investment group exploring the cannabis sector, we welcome the conversation. Reach out to learn more about partnership opportunities and our export capabilities.</p>
+        <div class="reveal">
+          <div class="section-label">Get in Touch</div>
+          <h2 class="section-head">Ready to partner?</h2>
+          <p class="section-sub">Whether you are a distributor, importer, or looking for premium cannabis supply, we would love to hear from you.</p>
+          <a href="mailto:info@snrs.ca" class="btn-primary" style="margin-top:40px;display:inline-block;">Email Us</a>
         </div>
-        <div class="contact-items fade-in">
-          <div class="contact-item">
-            <div class="contact-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-            <div><h4>Headquarters</h4><p>41 Grenfell Crescent, Ottawa, Canada</p></div>
+        <div class="contact-items">
+          <div class="contact-item rc" style="transition-delay:.1s">
+            <div class="contact-icon">ð</div>
+            <div>
+              <h4>Location</h4>
+              <p>41 Grenfell Crescent<br>Ottawa, Ontario, Canada</p>
+            </div>
           </div>
-          <div class="contact-item">
-            <div class="contact-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-            <div><h4>Website</h4><p><a href="https://snrs.ca" target="_blank" rel="noopener">snrs.ca</a></p></div>
+          <div class="contact-item rc" style="transition-delay:.2s">
+            <div class="contact-icon">ð§</div>
+            <div>
+              <h4>Email</h4>
+              <p><a href="mailto:info@snrs.ca">info@snrs.ca</a></p>
+            </div>
           </div>
-          <div class="contact-item">
-            <div class="contact-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-            <div><h4>Email</h4><p><a href="mailto:info@snrs.ca">info@snrs.ca</a></p></div>
+          <div class="contact-item rc" style="transition-delay:.3s">
+            <div class="contact-icon">ð</div>
+            <div>
+              <h4>Website</h4>
+              <p><a href="https://snrs.ca">snrs.ca</a></p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- FOOTER -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer-logo"><span class="gold">Sunrise</span> <span class="white">Canada</span></div>
-      <div class="footer-divider"></div>
-      <p>© 2026 Sunrise Canada. All rights reserved.</p>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-logo">sunrise.</div>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#product">Product</a>
+          <a href="#brand">Brands</a>
+          <a href="#global">Global</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">&copy; 2025 Sunrise Canada. All rights reserved.</div>
+        <div class="footer-copy">41 Grenfell Crescent, Ottawa, Canada</div>
+      </div>
     </div>
   </footer>
+
   <script>
-    (function(){
-      var navbar=document.getElementById("navbar"),hamburger=document.getElementById("hamburger"),mobileMenu=document.getElementById("mobileMenu"),mobileLinks=mobileMenu.querySelectorAll("a"),fadeEls=document.querySelectorAll(".fade-in");
-      function closeMenu(){hamburger.classList.remove("active");mobileMenu.classList.remove("open");document.body.classList.remove("menu-open")}
-      function toggleMenu(){if(mobileMenu.classList.contains("open")){closeMenu()}else{hamburger.classList.add("active");mobileMenu.classList.add("open");document.body.classList.add("menu-open")}}
-      hamburger.addEventListener("click",toggleMenu);
-      hamburger.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();toggleMenu()}});
-      for(var i=0;i<mobileLinks.length;i++){mobileLinks[i].addEventListener("click",closeMenu)}
-      var ticking=false;
-      function onScroll(){if(!ticking){requestAnimationFrame(function(){if(window.scrollY>60){navbar.classList.add("scrolled")}else{navbar.classList.remove("scrolled")}ticking=false});ticking=true}}
-      window.addEventListener("scroll",onScroll,{passive:true});onScroll();
-      if("IntersectionObserver" in window){var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target)}})},{threshold:.15,rootMargin:"0px 0px -40px 0px"});fadeEls.forEach(function(el){observer.observe(el)})}else{fadeEls.forEach(function(el){el.classList.add("visible")})}
-      window.addEventListener("resize",function(){if(window.innerWidth>768){closeMenu()}});
-    })();
+    // Navbar scroll effect
+    const nav = document.getElementById("nav");
+    let lastScroll = 0;
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 60) nav.classList.add("scrolled");
+      else nav.classList.remove("scrolled");
+    }, { passive: true });
+
+    // Mobile menu
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileClose = document.getElementById("mobileClose");
+    menuToggle.addEventListener("click", () => mobileMenu.classList.add("open"));
+    mobileClose.addEventListener("click", () => mobileMenu.classList.remove("open"));
+    document.querySelectorAll(".mobile-link").forEach(link => {
+      link.addEventListener("click", () => mobileMenu.classList.remove("open"));
+    });
+
+    // Scroll reveal (IntersectionObserver)
+    const revealEls = document.querySelectorAll(".reveal, .rc");
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+    revealEls.forEach(el => revealObs.observe(el));
+
+    // Counter animation
+    const counters = document.querySelectorAll(".counter");
+    const counterObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.target);
+          let current = 0;
+          const step = () => {
+            current++;
+            el.textContent = current;
+            if (current < target) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
+          counterObs.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(c => counterObs.observe(c));
   </script>
 </body>
 </html>
